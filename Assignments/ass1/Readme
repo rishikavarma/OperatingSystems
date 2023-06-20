@@ -1,0 +1,38 @@
+
+Part 1: Printing all the strings given as arguments to main.
+
+	Step 1: Writing the prog.c program.
+
+		First make a loop to iterate through each string in argv using argc as the total number of strings. In each iteration use printf to print the string and a new line to stdout(1).Save this file in the users directory of the xv6-riscv directory.
+
+	Step 2: Updating the Makefile
+
+		Add $U/_prog\ under UPROGS=\ and prog.c under EXTRA=\ to enable compilation.
+	
+	Step 3: Running the program
+
+		Go into the xv6-riscv directory and execute command "make qemu". This will compile all the files in the users directory. Now run the file by giving command "prog "arg 1" "arg 2"".
+
+		Ex: prog rishika cs18b045
+		output for this will be :
+		rishika
+		cs18b045
+
+Part 2:
+
+	Step 1: Updating mkdir function.
+
+		Open the sysfile.c from kernel. Go to the sys_mkdir function and add print statements at the begin of the function (before any implementation) and at the end of the function just before returning. 
+
+	Step 2: Running the updated mkdir
+
+		Go into the xv6-riscv directory. As the sysfile.c is a kernel program. So to compile it we must first reove the earlier compilaton executables using the command "make clean". After this  do "make qemu". Now the kernel files will be compiled freshly. Execute command "mkdir "dir name"". This will reate a directory of the given name and will print the appropriate statements to stdout.
+		
+
+		Ex: mkdir rishika
+		output for this will be :
+		mkdir of kernel
+		end of mkdir
+
+
+
